@@ -29,7 +29,7 @@ with open(jobs_file) as f:
        try:
            jenkinsStream = urllib2.urlopen( url + "/lastFailedBuild/api/json" )
        except urllib2.HTTPError, e:
-           print url + "/lastFailedBuild/api/json:", e, ". No failed builds?"
+           print url + "/lastFailedBuild/api/json:", e
            continue
        try:
            buildStatusJson = json.load( jenkinsStream )
